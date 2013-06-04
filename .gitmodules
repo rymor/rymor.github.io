@@ -1,0 +1,3 @@
+[submodule "esri-kinetic-panning"]
+	path = esri-kinetic-panning
+	url = https://github.com/rymor/esri-kinetic-panning.git
