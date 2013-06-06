@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=7,IE=9" />
+		<!--The viewport meta tag is used to improve the presentation and behavior of the samples
+		on iOS devices-->
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+		<title>Demo</title>
+		<!--<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/dojo/1.6/dijit/themes/claro/document.css">-->
+		<link rel="stylesheet" type="text/css" href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.2/js/dojo/dijit/themes/claro/claro.css">
+		<link rel="stylesheet" type="text/css" href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.2/js/esri/css/esri.css" />
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<!-- Custom dijit styles -->
+		<link rel="stylesheet" type="text/css" href="gic/dijits/css/Legend.css"/>
+		<link rel="stylesheet" type="text/css" href="gic/dijits/css/ToggleToolbar.css"/>
+		<link rel="stylesheet" type="text/css" href="gic/dijits/css/BasemapTogglebar.css"/>
+		<link rel="stylesheet" type="text/css" href="gic/dijits/css/FeatureResultRecords.css"/>
+		<link rel="stylesheet" type="text/css" href="gic/dijits/css/EmailDialog.css"/>
+		<link rel="stylesheet" type="text/css" href="gic/dijits/css/_Layer.css"/>
+		<link rel="stylesheet" type="text/css" href="gic/dijits/layout/css/TabDrawerContainer.css"/>
+		<script type="text/javascript">
+			var dojoConfig = {
+				parseOnLoad : false,
+				tlmSiblingOfDojo : false,
+				async : true,
+				packages : [{
+					"name" : "gic",
+					"location" : location.pathname.replace(/\/[^/]+$/, "") + "/gic"
+				}, {
+					"name" : "config",
+					"location" : location.pathname.replace(/\/[^/]+$/, ""),
+					"main" : "config"
+				}]
+			};
+		</script>
+		<script type="text/javascript" src="http://serverapi.arcgisonline.com/jsapi/arcgis/?v=3.2"></script>
+		<script type="text/javascript" src="index.js"></script>
+	</head>
+	<body class="claro" data-dojo-type="dijit.layout.ContentPane">
+		<div class="bodyContent" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="gutters:'false'" style="width:100%; height: 100%; margin:auto; padding-left: 5px;">
+			<div id="topPane" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'" style="overflow:hidden;">
+				<table style="height:100%;">
+					<tr>
+						<td style="vertical-align:middle;"><a id="headerLinkImage" target="_blank" style="display:none;"> <img id="headerImageInLink"/></a><img id="headerImage" style="display:none;"/></td>
+						<td style="vertical-align:middle;"><h2 id="headerTitle">This is a title</h2>
+						<br>
+						<h3 id="headerSubTitle" style="display:none;">This is the subtitle</h3></td>
+					</tr>
+				</table>
+			</div>
+			<div id="leftPane" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'left'" style="width:315px;">
+				<div id="leftBorderContainer" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="gutters:false" style="width:100%; height: 100%;">
+					<div id="accordionContainer" data-dojo-type="dijit.layout.AccordionContainer" data-dojo-props="region:'center'" style="overflow: auto;"></div>
+					<div id="basemapContainer" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'bottom'" style="height:40px;"></div>
+				</div>
+			</div>
+			<div id="centerPane" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'">
+				<div id="centerBorderContainer"  data-dojo-props="gutters:false" data-dojo-type="dijit.layout.BorderContainer">
+					<!-- IMPORTANT
+					Need to manually set height of toolbar or the initial load of the height will have offset issues w/ graphics on map -->
+					<div id="toolbarContainer" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'" style="height:37px;"></div>
+					<div id="map" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'" ></div>
+				</div>
+			</div>
+			<div id="footer" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'bottom'" style="height: 0;display:none;"></div>
+		</div>
+	</body>
+</html>
